@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">Sam / mcl0vinit profile banner</title>
+  <desc id="desc">Animated banner centered on Vilano Runtime, agent systems, and operator tooling.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111d" />
+      <stop offset="45%" stop-color="#0d1727" />
+      <stop offset="100%" stop-color="#162336" />
+    </linearGradient>
+    <radialGradient id="orb" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#8cf3ff" stop-opacity="0.85" />
+      <stop offset="45%" stop-color="#39c8e6" stop-opacity="0.38" />
+      <stop offset="100%" stop-color="#39c8e6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8cf3ff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#8cf3ff" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#8cf3ff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      .mono { font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace; }
+      .sans { font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .muted { fill: #8ea6bf; }
+      .line { stroke: #79d8ef; stroke-opacity: 0.28; stroke-width: 1.2; }
+      .node { fill: #09111a; stroke: #79d8ef; stroke-width: 1.5; }
+      .chip { fill: #0b1623; stroke: #27425d; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="360" fill="url(#bg)" />
+
+  <g opacity="0.18">
+    <path d="M0 72H1280M0 144H1280M0 216H1280M0 288H1280" stroke="#6fcce4" stroke-width="1" />
+    <path d="M160 0V360M320 0V360M480 0V360M640 0V360M800 0V360M960 0V360M1120 0V360" stroke="#6fcce4" stroke-width="1" />
+  </g>
+
+  <rect x="-280" y="0" width="280" height="360" fill="url(#beam)">
+    <animate attributeName="x" values="-280;1280" dur="11s" repeatCount="indefinite" />
+  </rect>
+
+  <g transform="translate(74 86)">
+    <text class="mono" x="0" y="0" font-size="18" letter-spacing="4" fill="#79d8ef">MCL0VINIT / SAM</text>
+    <text class="sans" x="0" y="70" font-size="58" font-weight="700" fill="#f4fbff">CEO @ VILANO AI</text>
+    <text class="sans" x="0" y="118" font-size="28" fill="#dbe9f5">building durable runtime + orchestration for agent systems</text>
+    <text class="mono muted" x="0" y="154" font-size="16">replay • supervision • operator tooling • retrieval • execution graphs</text>
+
+    <g transform="translate(0 196)">
+      <rect class="chip" x="0" y="0" rx="18" width="154" height="36" />
+      <rect class="chip" x="168" y="0" rx="18" width="162" height="36" />
+      <rect class="chip" x="344" y="0" rx="18" width="136" height="36" />
+      <rect class="chip" x="494" y="0" rx="18" width="126" height="36" />
+      <text class="mono" x="18" y="23" font-size="14" fill="#b8f6ff">vilano runtime</text>
+      <text class="mono" x="186" y="23" font-size="14" fill="#b8f6ff">org systems</text>
+      <text class="mono" x="362" y="23" font-size="14" fill="#b8f6ff">agent ops</text>
+      <text class="mono" x="512" y="23" font-size="14" fill="#b8f6ff">infra</text>
+    </g>
+  </g>
+
+  <g transform="translate(948 178)">
+    <circle r="112" fill="url(#orb)" />
+    <circle r="88" fill="#09111a" stroke="#8cf3ff" stroke-opacity="0.75" stroke-width="1.5" filter="url(#glow)" />
+    <circle r="126" fill="none" stroke="#6fd6ee" stroke-opacity="0.36" stroke-width="1.4" stroke-dasharray="8 10">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="22s" repeatCount="indefinite" />
+    </circle>
+    <circle r="152" fill="none" stroke="#6fd6ee" stroke-opacity="0.2" stroke-width="1.2" stroke-dasharray="4 12">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="30s" repeatCount="indefinite" />
+    </circle>
+
+    <g class="line" stroke-dasharray="6 10">
+      <line x1="0" y1="0" x2="-170" y2="-76">
+        <animate attributeName="stroke-dashoffset" values="0;-64" dur="6s" repeatCount="indefinite" />
+      </line>
+      <line x1="0" y1="0" x2="156" y2="-46">
+        <animate attributeName="stroke-dashoffset" values="0;-64" dur="5.4s" repeatCount="indefinite" />
+      </line>
+      <line x1="0" y1="0" x2="138" y2="74">
+        <animate attributeName="stroke-dashoffset" values="0;-64" dur="6.8s" repeatCount="indefinite" />
+      </line>
+      <line x1="0" y1="0" x2="-132" y2="94">
+        <animate attributeName="stroke-dashoffset" values="0;-64" dur="5.8s" repeatCount="indefinite" />
+      </line>
+    </g>
+
+    <g>
+      <circle class="node" cx="-170" cy="-76" r="13">
+        <animate attributeName="r" values="13;15;13" dur="4s" repeatCount="indefinite" />
+      </circle>
+      <circle class="node" cx="156" cy="-46" r="13">
+        <animate attributeName="r" values="13;16;13" dur="4.6s" repeatCount="indefinite" />
+      </circle>
+      <circle class="node" cx="138" cy="74" r="13">
+        <animate attributeName="r" values="13;15;13" dur="3.8s" repeatCount="indefinite" />
+      </circle>
+      <circle class="node" cx="-132" cy="94" r="13">
+        <animate attributeName="r" values="13;16;13" dur="5.2s" repeatCount="indefinite" />
+      </circle>
+      <text class="mono" x="-205" y="-94" font-size="12" fill="#a9f6ff">org</text>
+      <text class="mono" x="168" y="-50" font-size="12" fill="#a9f6ff">agents</text>
+      <text class="mono" x="150" y="96" font-size="12" fill="#a9f6ff">ops</text>
+      <text class="mono" x="-170" y="118" font-size="12" fill="#a9f6ff">infra</text>
+    </g>
+
+    <text class="mono" x="-42" y="-6" font-size="16" fill="#8cf3ff">CENTER</text>
+    <text class="sans" x="-60" y="22" font-size="24" font-weight="700" fill="#f4fbff">runtime</text>
+  </g>
+</svg>
