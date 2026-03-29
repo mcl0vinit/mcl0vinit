@@ -6,17 +6,28 @@ I build software for the part most teams hand-wave away: memory, recovery, orche
 
 The common thread in my work is that I do not like systems that only look good on the happy path. I care about what happens when a worker dies mid-run, when state has to survive restarts, when automation needs authority boundaries, when a browser environment has to be convincing enough to fool hostile code, or when the operator needs to understand exactly why the machine did what it did.
 
-If I keep ending up in the same class of problems, it is because I like software where the constraints are real.
+If my GitHub history looks eclectic, that is because I like software where the constraints are real.
 
-<p align="center">
-  <img height="190" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mcl0vinit&layout=pie&hide_border=true&theme=transparent&langs_count=8&size_weight=0.5&count_weight=0.5" alt="Top languages" />
-</p>
+## Languages I've Actually Built In
+
+_Roughly by primary language across my non-fork GitHub repos._
+
+```mermaid
+pie showData
+    title GitHub repo history by language
+    "Rust" : 54
+    "TypeScript" : 45
+    "Go" : 33
+    "JavaScript" : 27
+    "Solidity" : 27
+    "Other" : 37
+```
 
 ## The Kind Of Engineer I Am
 
-I have spent serious time across runtime systems, distributed monitors, retrieval pipelines, market-facing low-latency tooling, browser and protocol sandboxes, and agent execution layers. That mix sounds random until you look at the through-line: I keep gravitating toward systems that need explicit state, strong control loops, and a clean separation between what is automated, what is durable, and what still belongs to a human operator.
+I have spent serious time across runtime systems, distributed monitors, retrieval pipelines, market-facing low-latency tooling, browser and protocol sandboxes, cloud/dev infra, and agent execution layers. That mix sounds random until you look at the through-line: I keep gravitating toward systems that need explicit state, strong control loops, and a clean separation between what is automated, what is durable, and what still belongs to a human operator.
 
-I am comfortable moving between product-speed languages and lower-level systems work. TypeScript is where I move fast on runtime surfaces and orchestration. Go is where I like to build clear service boundaries and concurrency-heavy control loops. Rust is where I want tight control over execution and correctness. Zig is where I want small, sharp tools without much abstraction standing in the way. I also spend real time in the infrastructure around the code: SQLite, Nix, shell, containers, and the BEAM when the runtime itself is the interesting part.
+I am comfortable moving between product-speed languages and lower-level systems work. TypeScript is where I move fast on runtime surfaces and orchestration. Go is where I like to build clear service boundaries and concurrency-heavy control loops. Rust is where I want tighter control over execution, transport, and correctness. Zig is where I want small, sharp tools without much abstraction standing in the way. And the older repo history matters too: there is a long trail through Solidity security work, browser automation and anti-bot tooling, scraping and data acquisition systems, deployers and cloud scaffolds, plus the early Ruby, Python, C++, and Swift detours you only get by actually building a lot of different things over time.
 
 ## What I Tend To Build
 
@@ -39,6 +50,14 @@ Some of the most technically interesting work I have done has been below the app
 ### Low-latency and signal-to-action systems
 
 I have also spent time in systems where timing, bad data, and execution quality all matter at once: ingesting live feeds, ranking and filtering signals, managing proxy-backed clients, and carrying the path all the way through to action.
+
+### Data acquisition and ugly real-world interfaces
+
+There is also a big thread in my repo history around crawling, scraping, public/business data, real-estate data, monitors, and all the brittle integration work that comes with systems built against interfaces that do not really want to be integrated with.
+
+### Security and adversarial environments
+
+Another consistent pattern is that I learn a lot by working close to hostile surfaces: smart contract attack exercises, anti-bot systems, CAPTCHA and browser-fingerprint work, transport quirks, and the kinds of environments where correctness is not enough unless the system is also believable.
 
 ## Current Focus
 
