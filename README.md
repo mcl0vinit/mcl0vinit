@@ -16,6 +16,16 @@ The code reruns. The state does not.
 
 A BEAM kernel handles waits, signals, leases, supervision, passivation, and durable execution state. Disposable TypeScript workers sit on top. The point is not just to automate work, but to make execution inspectable, replayable, and governable once the system is under load.
 
+## Vilano Stack
+
+Runtime is the execution substrate.
+
+A retrieval and code-intelligence layer sits next to it: polyglot analysis, knowledge graphs, semantic search, and grounded answers with citations instead of hand-wavy synthesis.
+
+A durable work system sits on top: take a ticket, turn it into an explicit graph, execute it with specialized agent roles, review failures, replan when the shape of the work changes, and keep the whole process inspectable.
+
+That same stack also underpins product-shaped surfaces: branchable synthetic systems, decision environments, and simulation tools built on the same durable foundations.
+
 ## Past Work
 
 Before focusing this hard on durable agent runtimes, I spent years building across a much wider set of difficult surfaces: browser automation and anti-bot environments, protocol and sandbox work, smart contract and adversarial security systems, low-latency signal-to-action tooling, scraping and public-data pipelines, retrieval and code intelligence, and the infra required to keep those systems alive.
