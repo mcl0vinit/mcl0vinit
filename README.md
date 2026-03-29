@@ -8,17 +8,13 @@ CEO @ [Vilano AI](https://vilano.ai)
 
 My GitHub history is less a single lane than a trail through hard constraints. The through-line is consistent: I care about durable state, explicit control, grounded answers, believable environments, and operators who can tell what happened without guessing.
 
-## Current Focus
+## Vilano Stack
 
-[Vilano Runtime](https://github.com/vilano-ai/runtime) is the clearest expression of how I think about software: a durable runtime for agent systems built around deterministic replay.
+[Vilano Runtime](https://github.com/vilano-ai/runtime) is the execution substrate: a durable runtime for agent systems built around deterministic replay.
 
 The code reruns. The state does not.
 
 A BEAM kernel handles waits, signals, leases, supervision, passivation, and durable execution state. Disposable TypeScript workers sit on top. The point is not just to automate work, but to make execution inspectable, replayable, and governable once the system is under load.
-
-## Vilano Stack
-
-Runtime is the execution substrate.
 
 A retrieval and code-intelligence layer sits next to it: polyglot analysis, knowledge graphs, semantic search, and grounded answers with citations instead of hand-wavy synthesis.
 
