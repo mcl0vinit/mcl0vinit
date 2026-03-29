@@ -2,84 +2,51 @@
 
 CEO @ [Vilano AI](https://vilano.ai)
 
-I build infrastructure for agent systems that need memory, recovery, and supervision.
+I build software for the part most teams hand-wave away: memory, recovery, orchestration, governance, and operator control.
 
-Most agent software still reads like a demo: optimistic control flow, shallow state, and weak operational boundaries. I care about the opposite. I like systems with durable state, explicit queues and leases, real operator surfaces, and failure modes you can actually reason about.
+The common thread in my work is that I do not like systems that only look good on the happy path. I care about what happens when a worker dies mid-run, when state has to survive restarts, when automation needs authority boundaries, when a browser environment has to be convincing enough to fool hostile code, or when the operator needs to understand exactly why the machine did what it did.
 
-## Rough Map Of My Work
+If I keep ending up in the same class of problems, it is because I like software where the constraints are real.
 
-```mermaid
-pie showData
-    title What I've spent time building
-    "Durable runtime and orchestration" : 32
-    "Agent execution and governance" : 22
-    "Retrieval and code intelligence" : 16
-    "Protocol and browser sandboxes" : 12
-    "Distributed monitoring systems" : 10
-    "Market-facing low-latency systems" : 8
-```
+<p align="center">
+  <img height="190" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mcl0vinit&layout=pie&hide_border=true&theme=transparent&langs_count=8&size_weight=0.5&count_weight=0.5" alt="Top languages" />
+</p>
 
-## Flagship
+## The Kind Of Engineer I Am
 
-### [Vilano Runtime](https://github.com/vilano-ai/runtime)
+I have spent serious time across runtime systems, distributed monitors, retrieval pipelines, market-facing low-latency tooling, browser and protocol sandboxes, and agent execution layers. That mix sounds random until you look at the through-line: I keep gravitating toward systems that need explicit state, strong control loops, and a clean separation between what is automated, what is durable, and what still belongs to a human operator.
 
-Runtime is the clearest expression of what I care about.
+I am comfortable moving between product-speed languages and lower-level systems work. TypeScript is where I move fast on runtime surfaces and orchestration. Go is where I like to build clear service boundaries and concurrency-heavy control loops. Rust is where I want tight control over execution and correctness. Zig is where I want small, sharp tools without much abstraction standing in the way. I also spend real time in the infrastructure around the code: SQLite, Nix, shell, containers, and the BEAM when the runtime itself is the interesting part.
 
-It is a durable runtime for agent systems built around deterministic replay: the code reruns, the state does not. Underneath it is a BEAM kernel handling coordination, waits, signals, pubsub, leases, supervision, passivation, and durable state; on top of it sit disposable TypeScript workers and an operator CLI.
+## What I Tend To Build
 
-The point is not to make agents look impressive in a happy-path demo. The point is to make them recover correctly when they crash, stall, block on subprocesses, fan out work, or need to be inspected by a human operator after something weird happened.
+### Durable execution systems
 
-## Selected Projects
+I like systems where work is replayable, state is durable, and retries are not the main strategy. Queues, leases, supervision, passivation, child execution, signals, pubsub, and inspectable timelines are much more interesting to me than another thin wrapper around background jobs.
 
-### OrgOS
+### Agent infrastructure with real boundaries
 
-OrgOS is my attempt at building an actual governance layer for agent operations instead of pretending prompts alone are governance.
+I care about agents, but I care even more about the machinery around them. That means execution graphs, review loops, escalation paths, policy rails, and governance models that stop the system from pretending uncertainty is the same thing as autonomy.
 
-It models authority explicitly. Decisions move through roles with real envelopes. Signals, actions, and escalations are written to a ledger. Founder attention is treated like a scarce resource to preserve, not an overflow buffer for every ambiguous case. The whole thing is designed so the system can supervise work without collapsing into constant human interruption.
+### Retrieval and code intelligence
 
-### Atlas
+I am drawn to systems that turn large codebases into something queryable and grounded: multi-language parsing, graph and vector representations, citation-backed synthesis, confidence gates, and tooling that can explain where an answer came from instead of bluffing.
 
-Atlas is a code intelligence system for turning repositories into something an agent can reason over without hand-waving.
+### Browser, protocol, and anti-abstraction work
 
-It parses multiple languages, builds graph and vector views of a codebase, and runs a Planner -> CodeOps -> Synthesizer pipeline with citations and confidence gates. What I like about it is that it forces the system to show its evidence, track retrieval quality, and know when it does not have enough grounding to answer cleanly.
+Some of the most technically interesting work I have done has been below the application layer: reconstructing browser environments, shaping network behavior, dealing with TLS and HTTP quirks, and learning where "the script runs" is still very far away from "the environment behaves like the real thing."
 
-### Assembly / Wilbur
+### Low-latency and signal-to-action systems
 
-This line of work is about making software execution itself durable and inspectable.
+I have also spent time in systems where timing, bad data, and execution quality all matter at once: ingesting live feeds, ranking and filtering signals, managing proxy-backed clients, and carrying the path all the way through to action.
 
-Wilbur started from a simple but important idea: tickets are the source of truth, a daemon owns scheduling, and workers move through explicit flows instead of ad hoc scripts. Assembly is the next step: work becomes a durable task graph with planning, review, remediation, fan-out, fan-in, and tighter control over where models are allowed to act on their own.
+## Current Focus
 
-### Icarus
+Right now, the clearest embodiment of how I think is [Vilano Runtime](https://github.com/vilano-ai/runtime).
 
-Icarus was an earlier distributed monitoring system built around typed services, worker dispatch, hot scheduling state, durable persistence, and explicit lifecycle transitions.
+It is a durable runtime for agent systems built around deterministic replay: the code reruns, the state does not. Underneath it is a BEAM kernel handling coordination, waits, signals, leases, supervision, passivation, and durable execution state. On top of that sit disposable TypeScript workers and an operator surface.
 
-It mattered to me because it forced hard choices about queueing, service boundaries, caching, and control loops long before I was using the language of agent systems. A lot of my later taste around orchestration and operational correctness came out of work like that.
-
-### bp-sandbox
-
-bp-sandbox is one of the stranger things I've built, and one of the more technically revealing.
-
-It is a Go + V8 sandbox that reconstructs enough of a believable browser surface to run brittle or adversarial protection logic in a controlled environment: document, navigator, screen, sensors, cookies, timers, events, canvas/WebGL fingerprints, and custom network behavior. It pushed me deep into TLS fingerprints, HTTP transport quirks, and the difference between "JavaScript executes" and "the environment is convincing enough to matter."
-
-### Fancy
-
-Fancy was a market-facing Rust system built around live ranking and order feeds, proxy-backed client pools, floor analysis, and on-chain execution paths.
-
-What made it interesting was not just the feed ingestion. It was the full loop from signal detection to transaction construction, under conditions where latency, bad data, and execution quality all mattered at once.
-
-### [Rove](https://github.com/mcl0vinit/rove)
-
-Rove is smaller in scope than the systems above, but it reflects the same taste.
-
-It is a Zig tool for spinning up Fly devboxes, syncing repos, applying machine profiles, offloading tmux state, and pulling work back cleanly. It is basically personal operator infrastructure: less grand than the runtime work, but very aligned with how I think software should behave when multiple machines and real workflows are involved.
-
-## What I Optimize For
-
-- systems that recover deterministically instead of hoping retries are good enough
-- execution models with explicit state, leases, queues, and supervision
-- agent workflows that are inspectable, pauseable, and operable by humans
-- strong boundaries between execution, policy, and escalation
-- tooling that stays useful after the first demo
+That is the kind of software I want more of: systems that keep their shape under failure and can still be understood once they are under load.
 
 ## Public Repos
 
