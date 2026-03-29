@@ -10,11 +10,9 @@ My GitHub history is less a single lane than a trail through hard constraints. T
 
 ## Vilano Stack
 
-- [Vilano Runtime](https://github.com/vilano-ai/runtime) is the execution substrate: a durable runtime for agent systems built around deterministic replay.
-- The code reruns. The state does not.
-- Underneath it, a BEAM kernel handles waits, signals, leases, supervision, passivation, and durable execution state. Disposable TypeScript workers sit on top. The point is not just to automate work, but to make execution inspectable, replayable, and governable once the system is under load.
-- Beside it, a retrieval and code-intelligence layer handles polyglot analysis, knowledge graphs, semantic search, and grounded answers with citations instead of hand-wavy synthesis.
-- On top, a durable work system turns tickets into explicit graphs, executes them with specialized agent roles, reviews failures, replans when the shape of the work changes, and keeps the whole process inspectable.
+- [Vilano Runtime](https://github.com/vilano-ai/runtime): the execution substrate, built around deterministic replay. The code reruns. The state does not. A BEAM kernel handles waits, signals, leases, supervision, passivation, and durable execution state. Disposable TypeScript workers sit on top. The point is not just to automate work, but to make execution inspectable, replayable, and governable once the system is under load.
+- Corpus: the retrieval and code-intelligence layer. Polyglot analysis, knowledge graphs, semantic search, and grounded answers with citations instead of hand-wavy synthesis.
+- Assembly: the durable work system on top. It turns tickets into explicit graphs, executes them with specialized agent roles, reviews failures, replans when the shape of the work changes, and keeps the whole process inspectable.
 - From that same foundation come product-shaped surfaces: branchable synthetic systems, decision environments, and simulation tools.
 
 ## Past Work
