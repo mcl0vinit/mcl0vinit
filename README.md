@@ -4,20 +4,23 @@ CEO @ [Vilano AI](https://vilano.ai)
 
 > I build infrastructure for agent systems that have to survive contact with reality.
 
-Vilano is the clearest expression of how I think about software: durable execution, grounded retrieval, explicit work graphs, and operator control.
+Vilano is the clearest expression of how I think about software: durable execution, strong control loops, and systems that remain legible once they are under load.
 
 If agents are going to matter, they cannot just be clever in the happy path. They need to be replayable, inspectable, governable, and resilient under load.
 
-## Vilano Stack
+## Vilano Runtime
 
-- [Vilano Runtime](https://github.com/vilano-ai/runtime): the durable execution substrate. It is built around deterministic replay. The code reruns. The state does not. Underneath it is a BEAM kernel handling waits, signals, leases, supervision, passivation, and durable execution state, with disposable TypeScript workers on top.
-- Corpus: the retrieval and code-intelligence layer. Polyglot analysis, knowledge graphs, semantic search, and grounded answers with citations instead of hand-wavy synthesis.
-- Assembly: the durable work system. It turns tickets into explicit graphs, executes them with specialized agent roles, reviews failures, replans when the shape of the work changes, and keeps the whole process inspectable.
-- On top of that foundation sit product-shaped surfaces: branchable synthetic systems, decision environments, and simulation tools.
+[Vilano Runtime](https://github.com/vilano-ai/runtime) is the durable execution substrate. It is built around deterministic replay.
+
+The code reruns. The state does not.
+
+Underneath it is a BEAM kernel handling waits, signals, leases, supervision, passivation, and durable execution state, with disposable TypeScript workers on top.
+
+What interests me most is not just runtime on its own, but what durable execution makes possible next: systems around agents that are grounded, inspectable, governable, and built for real operators instead of demos.
 
 ## Past Work
 
-Before pulling those threads together into the Vilano stack, I spent years building across a much wider set of difficult surfaces: browser automation and anti-bot environments, protocol and sandbox work, smart contract and adversarial security systems, low-latency signal-to-action tooling, scraping and public-data pipelines, retrieval and code intelligence, and the infra required to keep those systems alive.
+Before pulling those threads together into Vilano, I spent years building across a much wider set of difficult surfaces: browser automation and anti-bot environments, protocol and sandbox work, smart contract and adversarial security systems, low-latency signal-to-action tooling, scraping and public-data pipelines, retrieval and code intelligence, and the infra required to keep those systems alive.
 
 The repo history is broad because the work has been broad. What makes it coherent is taste. I keep ending up in places where the interface lies, the environment pushes back, timing matters, and the operator still needs a clear picture of what happened after the fact.
 
